@@ -1,0 +1,17 @@
+<mat-card class="notification-item" [@loadItemAnimation]>
+    <mat-card-content>
+        <div>
+            <span> Order </span>
+            <span class="dynamic-data">#{{notification.orderId}} </span>
+            <span class="dynamic-data"> {{notification.status | orderStatusEnum}}</span>
+            <span> by </span><span class="dynamic-data">{{notification.changedBy}}</span>
+            <span> on </span>
+            <span class="dynamic-data"> {{notification.date | date:"short"}}</span>
+        </div>
+        <div class="clear-wrapper">
+            <button mat-icon-button class="clear-button" (click)="clearNotification(notification)">
+                <span>Clear</span>
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,134 @@
+<div class="page-container">
+
+    <h2 class="page-title">{{pageTitle}}
+    </h2>
+
+    <div class="row">
+        <div class="col-6">
+            <mat-card class="order-category-card open">
+                <mat-card-header>
+                    <mat-card-title>
+                        Open Orders
+                        <a routerLink="/order-management/0"><small>({{(openOrders$ | async)?.length}} items)</small></a>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#ID</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Customer Name</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of openOrders$ | async">
+                                <th scope="row">#{{order.id}}</th>
+                                <td>{{order.description}}</td>
+                                <td>{{order.customer.name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-6">
+            <mat-card class="order-category-card">
+                <mat-card-header>
+                    <mat-card-title>
+                        Order On Hold
+                        <a routerLink="/order-management/3"><small>({{(holdOrders$ | async)?.length}} items)</small></a>
+
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#ID</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Customer Name</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of holdOrders$ | async">
+                                <th scope="row">#{{order.id}}</th>
+                                <td>{{order.description}}</td>
+                                <td>{{order.customer.name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <mat-card class="order-category-card">
+                <mat-card-header>
+                    <mat-card-title>
+                        Canceled Orders
+                        <a routerLink="/order-management/2"><small>({{(canceledOrders$ | async)?.length}}
+                                items)</small></a>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#ID</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Customer Name</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of canceledOrders$ | async">
+                                <th scope="row">#{{order.id}}</th>
+                                <td>{{order.description}}</td>
+                                <td>{{order.customer.name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="col-6">
+            <mat-card class="order-category-card submitted">
+                <mat-card-header>
+                    <mat-card-title>
+                        Submitted Orders
+                        <a routerLink="/order-management/1"><small>({{(submittedOrders$ | async)?.length}}
+                                items)</small></a>
+                    </mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#ID</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Customer Name</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of submittedOrders$ | async">
+                                <th scope="row">#{{order.id}}</th>
+                                <td>{{order.description}}</td>
+                                <td>{{order.customer.name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+</div>

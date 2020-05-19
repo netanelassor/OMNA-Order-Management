@@ -1,0 +1,59 @@
+.mat-elevation-z8 {
+    background-color: white;
+    height: calc(100vh - 80px);
+    overflow: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border-radius: 8px;
+    box-shadow: var(--card-box-shadow);
+
+}
+
+.table-container {
+    height: calc(100% - 50px);
+}
+
+table {
+    width: 100%;
+}
+
+td,
+th {
+    height: 60px;
+}
+
+.page-title {
+    font-size: 22px;
+}
+
+.submit-button {
+    color: var(--success-color);
+}
+
+.status {
+    height: 30px;
+    width: 85px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 30px;
+    color: white;
+
+    &.Submitted {
+        background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+    }
+
+    &.Open {
+        //background: linear-gradient(to right, rgb(157, 80, 187), rgb(110, 72, 170));
+        background: linear-gradient(0deg, #ba54f5, #e14eca);
+    }
+
+    &.Hold {
+        background: linear-gradient(45deg, #ffb64d, #ffcb80);
+    }
+
+    &.Canceled {
+        background: linear-gradient(45deg, #ff5370, #ff869a);
+    }
+}

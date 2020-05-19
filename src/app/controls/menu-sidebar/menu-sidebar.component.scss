@@ -1,0 +1,43 @@
+mat-toolbar-row {
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.menu-list {
+  margin-inline-end: 6px;
+
+
+  .menu-item {
+    font-weight: normal;
+    height: 40px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: Lato, sans-serif !important;
+
+    &.active {
+      border-radius: 0 20px 20px 0;
+      //background-color: var(--primary-color);
+      background:linear-gradient(0deg,#ba54f5,#e14eca);
+
+
+      .icon {
+        color: white;
+      }
+    }
+
+    .icon {
+      color: lighten(#333, 50%);
+    }
+  }
+}
+
+.logo-holder {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  img {
+    height: 60px;
+  }
+
+}

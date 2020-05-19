@@ -1,1 +1,69 @@
+@import "~bootstrap/scss/bootstrap";
+@import "https://fonts.googleapis.com/css?family=Lato:300,400,900";
+
+@import './variable.scss';
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    margin: 0;
+    display: block;
+    font-family: Lato, sans-serif !important;
+}
+
+body {
+    margin: 0;
+    font-family: Lato, sans-serif !important;
+    box-sizing: border-box;
+}
+button:focus {
+    outline: none;
+}
+
+h2{
+    font-family: Lato, sans-serif !important;
+    color: var(--title-color);
+}
+
+.page-container {
+    padding: 15px;
+}
+
+.notif-success {
+    //background-color: var(--success-color) !important;
+    background: linear-gradient(0deg, #ba54f5, #e14eca);
+}
+
+.notif-error {
+    background-color: var(--error-color) !important;
+}
+
+
+/////////////////////////////
+///Start scroll bar Design///
+/////////////////////////////
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 3.5px;
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 3.5px;
+    background-color: #b8b8b8;
+}
+
+
+/////////////////////////////
+////End scroll bar Design////
+/////////////////////////////

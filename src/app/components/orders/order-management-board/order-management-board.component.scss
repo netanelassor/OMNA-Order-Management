@@ -1,0 +1,16 @@
+.order-category-card {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: var(--title-color);
+    height: 95%;
+
+    box-shadow: var(--card-box-shadow);
+}
+
+.item-container {
+    display: flex !important;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    .item-col {}
+}

@@ -1,0 +1,40 @@
+.notification-wrapper {
+    padding: 10px;
+    color: white;
+}
+
+.mat-drawer-end {
+    box-shadow: var(--box-shadow);
+}
+
+.panel-header {
+    justify-content: center;
+    background-color: transparent;
+}
+
+.clear-all-wrapper {
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--main-bg-color);
+    box-shadow: 0px -1px 11.8px 0.2px rgba(0, 0, 1, 0.15);
+    button{
+        color: var(--text-btn-color);
+    }
+}
+
+.no-notification-wrapper {
+    text-align: center;
+    color: var(--title-color);
+
+    .no-notification-icon {
+        height: 80px;
+        width: 80px;
+        font-size: 80px;
+    }
+
+    .no-notification-text {
+        font-size: 20px;
+    }
+}

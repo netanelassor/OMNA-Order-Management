@@ -1,0 +1,24 @@
+<mat-toolbar class="panel-header">
+    <h2>Notifications</h2>
+</mat-toolbar>
+<div class="notification-wrapper">
+    
+    <app-notification-item *ngFor="let notification of notificationList$ | async" [notification]="notification">
+    </app-notification-item>
+
+    <div *ngIf="(notificationList$ | async)?.length === 0">
+        <div class="no-notification-wrapper">
+            <mat-icon class="no-notification-icon">notifications</mat-icon>
+            <div class="no-notification-text">
+               No New Notifications!
+            </div>
+        </div>
+    </div>
+</div>
+
+<mat-toolbar class="clear-all-wrapper" *ngIf="(notificationList$ | async)?.length !== 0">
+    <button mat-button (click)="clearAllNotifications()">
+        <mat-icon>clear</mat-icon>
+        Clear All
+    </button>
+</mat-toolbar>

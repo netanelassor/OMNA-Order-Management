@@ -1,0 +1,34 @@
+
+<h1 mat-dialog-title> Order Number: #{{data.order.id}}</h1>
+<h5 mat-dialog-title> {{data.order.customer.name}}</h5>
+
+
+<hr>
+<div mat-dialog-content>
+    <div>
+        <span>You have chosen to change order's number: <strong>#{{data.order.id}}</strong></span>
+    </div>
+    <div>
+        <span> to be: <strong class="{{data.newStatus | orderStatusEnum}}">{{data.newStatus | orderStatusEnum}}</strong></span>
+    </div>
+    <hr>
+    <form [formGroup]="changeOrderStatusForm" *ngIf="isFormReady">
+        <mat-form-field class="field" appearance="fill">
+            <mat-label>Change By:</mat-label>
+            <input matInput formControlName="changedBy" autocomplete="off">
+        </mat-form-field>
+    
+        <mat-form-field class="field" appearance="fill">
+            <mat-label>Status Comment:</mat-label>
+            <textarea matInput formControlName="statusComment" autocomplete="off"></textarea>
+        </mat-form-field>
+
+    </form>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="closeModal()" mat-dialog-close>close</button>
+    <button mat-button type="submit" color="primary" (click)="confirmChanges()" mat-dialog-close
+        [disabled]="!changeOrderStatusForm.valid"> Confirm</button>
+</div>
+

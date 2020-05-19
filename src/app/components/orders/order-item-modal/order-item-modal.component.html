@@ -1,0 +1,47 @@
+<h1 mat-dialog-title> Order Number: #{{data.order.id}}</h1>
+<hr>
+
+<div mat-dialog-content class="dialog-content">
+    <h5 mat-dialog-title> Description:</h5>
+    <div class="row">
+        <div class="col">{{data.order.description}}</div>
+    </div>
+    <div class="row">
+        <div class="col">Status:</div>
+
+        <div class="col">{{data.order.status | orderStatusEnum}}</div>
+    </div>
+    <hr>
+
+    <h5 mat-dialog-title> Customer Details:</h5>
+    <div class="row">
+        <div class="col">Customer Name:</div>
+        <div class="col">{{data.order.customer.name}}</div>
+    </div>
+    <div class="row">
+        <div class="col">Customer Address:</div>
+        <div class="col">
+            {{data.order.customer.address.country + ' ' + data.order.customer.address.city + ' ' + data.order.customer.address.street}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">Contact Details:</div>
+        <div class="col">
+            <a href="mailto:{{data.order.customer.contactDetails.mail}}">{{data.order.customer.contactDetails.name}}</a>
+            <span> | </span>
+            <a href="tel:{{data.order.customer.contactDetails.phone}}">{{data.order.customer.contactDetails.phone}}</a>
+
+        </div>
+    </div>
+
+</div>
+
+
+<div mat-dialog-actions>
+    <button mat-button (click)="closeModal()" mat-dialog-close>Close Window</button>
+    <ng-container *ngIf="data.order.status === OrderStatusEnum.Open">
+        <button mat-button color="primary" mat-dialog-close> Cancel Order</button>
+        <button mat-button color="primary" mat-dialog-close> Hold</button>
+        <button mat-button color="primary" mat-dialog-close> Submit</button>
+    </ng-container>
+</div>

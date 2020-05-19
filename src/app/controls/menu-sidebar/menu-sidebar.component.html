@@ -1,0 +1,12 @@
+<mat-toolbar-row>
+    <div class="logo-holder" [routerLink]="['/home']">
+        <img src="assets/img/logo.png">
+    </div>
+</mat-toolbar-row>
+
+<mat-nav-list class="menu-list">
+    <mat-list-item *ngFor="let item of menuItems" class="menu-item"  [routerLinkActive]="['active']">
+        <mat-icon class="icon">{{item.iconName}}</mat-icon>
+        <a  [routerLink]="item.routeUrl + item.routeParams" matLine>{{item.title}}</a>
+    </mat-list-item>
+</mat-nav-list>

@@ -1,0 +1,27 @@
+.notification-item {
+    margin-bottom: 5px;
+    border-radius: 8px;
+    box-shadow: 0 1px 15px 0 hsla(0, 0%, 48%, .05);
+    font-family: Lato, sans-serif !important;
+
+
+    .dynamic-data{
+        font-weight: bold;
+    }
+
+    .clear-wrapper{
+        text-align: end;
+        .clear-button {
+            color: var(--text-btn-color);
+        }
+    }    
+}
+
+
+mat-card-title {
+    font-size: 18px !important;
+}
+.mat-card-avatar{
+    height: 20px;
+    width: 20px;
+}
