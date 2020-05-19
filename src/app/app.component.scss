@@ -7,6 +7,14 @@
     background-color: var(--main-bg-color);
 }
 
+.notification-toggle{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    .notification-toggle-btn{
+        color:#ba54f5;
+    }
+}
 mat-sidenav {
     &.notification-panel {
         width: 300px;

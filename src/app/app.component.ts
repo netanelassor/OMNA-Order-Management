@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/drag-drop';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,7 @@ import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/dr
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  constructor() {}
 
 }

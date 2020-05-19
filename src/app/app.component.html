@@ -1,15 +1,20 @@
-
 <mat-sidenav-container class="container-mat ">
 	<mat-sidenav opened mode="side" class="menu-panel">
 		<app-menu-sidebar></app-menu-sidebar>
 	</mat-sidenav>
 
-	<mat-sidenav opened mode="side" position="end" class="notification-panel">
+
+
+	<mat-sidenav #notificationPanel opened mode="side" position="end" class="notification-panel">
 		<app-notifications></app-notifications>
 	</mat-sidenav>
 
 	<div class="main-content">
-		<!-- <app-main-header></app-main-header> -->
+		<div class="notification-toggle">
+			<button mat-button class="notification-toggle-btn" (click)="notificationPanel.toggle()">
+				<mat-icon>notifications</mat-icon>
+			</button>
+		</div>
 
 		<router-outlet></router-outlet>
 	</div>

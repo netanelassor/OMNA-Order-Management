@@ -40,12 +40,13 @@ export class OrdersService {
    * @memberof OrdersService
    */
   updateOrderStatus(order: Order, newChangeLog: OrderChangeLog): Observable<Order[]> {
+    const originStatus: OrderStatus = order.status;
     const orderItem = OrdersFakeDB.orderList.find(o => o.id === order.id);
     orderItem.status = newChangeLog.status;
     orderItem.lastUpdateDate = new Date();
 
     this.notificationsService.pushNewNotification(newChangeLog);
-    return this.getOrderListByStatus(order.status);
+    return this.getOrderListByStatus(originStatus);
   }
 }
 

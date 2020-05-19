@@ -76,10 +76,9 @@ export class OrderManagementListComponent implements OnInit, OnDestroy {
 
     dialogRef.afterClosed().subscribe((result: OrderChangeLog) => {
       if (result) {
-        this.ordersService.updateOrderStatus(order, result);
-        this.ordersService.getOrderListByStatus(this.status).pipe(takeUntil(this.destroy)).subscribe((orderList: Order[]) => {
-          this.dataSource.data = orderList;
-        });
+        this.ordersService.updateOrderStatus(order, result).pipe(takeUntil(this.destroy)).subscribe((orderList: Order[]) => {
+            this.dataSource.data = orderList;
+          });
         const message = `Order number #${order.id} has ben ${this.statusPipe.transform(result.status)} successfully`;
         this.showToast(message, true);
       }
@@ -113,6 +112,4 @@ export class OrderManagementListComponent implements OnInit, OnDestroy {
       panelClass: success ? ['notif-success'] : ['notif-error']
     });
   }
-
-
 }
