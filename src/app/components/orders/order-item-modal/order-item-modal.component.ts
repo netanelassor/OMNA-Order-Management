@@ -17,10 +17,7 @@ export class OrderItemModalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.data.order);
   }
-
-
 
   confirmChanges() {
 
