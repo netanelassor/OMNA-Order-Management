@@ -38,10 +38,11 @@
 
 
 <div mat-dialog-actions>
-    <button mat-button (click)="closeModal()" mat-dialog-close>Close Window</button>
-    <ng-container *ngIf="data.order.status === OrderStatusEnum.Open">
+    <button mat-button (click)="closeModal()" mat-dialog-close>Close</button>
+
+    <!-- <ng-container *ngIf="data.order.status === OrderStatusEnum.Open">
         <button mat-button color="primary" mat-dialog-close> Cancel Order</button>
         <button mat-button color="primary" mat-dialog-close> Hold</button>
         <button mat-button color="primary" mat-dialog-close> Submit</button>
-    </ng-container>
+    </ng-container> -->
 </div>
