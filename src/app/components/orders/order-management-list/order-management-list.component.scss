@@ -11,18 +11,35 @@
 
 }
 
+.no-data-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    
+    .no-data-text {
+        font-family: Lato, sans-serif !important;
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--text-color4);
+    }
+}
+
 .table-container {
     height: calc(100% - 50px);
+
+    table {
+        width: 100%;
+    }
+
+    td,
+    th {
+        height: 60px;
+    }
+
 }
 
-table {
-    width: 100%;
-}
-
-td,
-th {
-    height: 60px;
-}
 
 .page-title {
     font-size: 22px;

@@ -3,7 +3,7 @@
     <h2 class="page-title">{{pageTitle}}</h2>
     <div class="mat-elevation-z8">
         <div class="table-container">
-            <table mat-table [dataSource]="dataSource" matSort>
+            <table mat-table [dataSource]="dataSource" matSort *ngIf="dataSource.data.length > 0">
 
                 <!-- ID Column -->
                 <ng-container matColumnDef="id">
@@ -71,6 +71,14 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
+
+
+            <div class="no-data-wrapper" *ngIf="dataSource.data.length === 0">
+                <img src="assets/img/no-data.png" />
+                <div class="no-data-text">
+                    Your "{{status | orderStatusEnum}}" order list is empty.
+                </div>
+            </div>
         </div>
 
         <mat-paginator #paginator [pageSizeOptions]="[14, 25, 50, 100]" *ngIf="dataSource.data.length > 14">
